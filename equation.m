@@ -12,6 +12,6 @@ function res = equation(~,M)
     ddtheta = -(g*sin(theta))/l;
     
     %store new positions/velocities in res
-    res = [dtheta, ddtheta];
+    res = [dtheta; ddtheta];
     
 end
