@@ -1,24 +1,33 @@
 function [X, Y] = pendulum()
     %set up initial conditions
-    G = [1.22, .01];
-    endTime = 2;
+    G = [pi/2, pi/2, 0, 0];
+    endTime = 5;
     l = .1;
     
     [t,S] = ode45(@equation, [0,endTime], G);
     %unpack the solution
-    theta = S(:,1);   
-    dtheta = S(:,2);    
+    theta1 = S(:,1);   
+    theta2 = S(:,2);
+    dtheta1 = S(:,3);
+    dtheta2 = S(:,4);
 
-    x = l.*sin(theta);
-    y = -l.*cos(theta);
+    x1 = l.*sin(theta1);
+    y1 = -l.*cos(theta1);
+    x2 = l.*sin(theta1) + l.*sin(theta2);
+    y2 = -l.*cos(theta1)- l.*cos(theta2);
     
-    comet(x,y);
+    hold on;
+%     plot(t, theta1, 'r-');
+%     plot(t, theta2, 'b-');
+    comet(x1, y1);
+    comet(x2, y2);
+
     
     %plot(t, theta, 'r-');
     xlabel('Time');
     ylabel('Theta');
     title('Pendulum Position over time');
-    X = x;
-    Y = y;
+    X = x1;
+    Y = y1;
     
 end
