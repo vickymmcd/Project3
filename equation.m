@@ -15,9 +15,12 @@ function res = equation(~,M)
 
     
     %solve for dz3 and dz4
-    num1 = (m2*L1*z4^2*sin(z1-z2)*cos(z1-z2)+g*m2*sin(z2)*cos(z1-z2)-m2*L2*z4^2*sin(z1-z2)-(m1+m2)*g*sin(z1));
-    den1 = L1*(m1+m2)-m2*L1*cos^2(z1-z2);
-    dz3 = -num1/den1;
+    num1 = -(m2*L1*z4^2*sin(z1-z2)*cos(z1-z2)+g*m2*sin(z2)*cos(z1-z2)-m2*L2*z4^2*sin(z1-z2)-(m1+m2)*g*sin(z1));
+    den1 = L1*(m1+m2)-m2*L1*(cos(z1-z2))^2;
+    dz3 = num1/den1;
+    num2 = (m2*L2*z4^2*sin(z1-z2)*cos(z1-z2))+g*m2*sin(z2)*cos(z1-z2)-m2*L2*z4^2*sin(z1-z2)-(m1+m2)*g*sin(z1);
+    den2 = L2*(m1+m2)-m2*L2*(cos(z1-z2))^2;
+    dz4 = num2/den2;
     
     %store new positions/velocities in res
     res = [z3; z4; dz3; dz4];
