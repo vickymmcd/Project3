@@ -1,6 +1,5 @@
-function [X, Y] = pendulum()
+function [X, Y1,Y2] = pendulum(G)
     %set up initial conditions
-    G = [pi/4, 0, 0, 0];
     endTime = 5;
     l = .1;
     
@@ -29,6 +28,6 @@ function [X, Y] = pendulum()
     ylabel('Theta 2');
     title('Pendulum Angle Variation');
     X = t;
-    Y = S;
-    
+    Y1=y1;
+    Y2=y2;
 end
