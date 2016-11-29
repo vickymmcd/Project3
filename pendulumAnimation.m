@@ -12,7 +12,7 @@ function pendulumAnimation()
         X2 = l.*sin(theta1) + l.*sin(theta2);
         Y2 = -l.*cos(theta1)- l.*cos(theta2);
         
-        minmax = [min([X1;X2]), max([X1;X2]), min([Y1;Y2]), max([Y1;Y2])];
+        minmax = [min([0;X2]), max([0;X2]), min([0;Y2]), max([0;Y2])];
         for i=1:length(T)
             clf;
             axis(minmax);

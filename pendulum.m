@@ -1,7 +1,7 @@
 function [X, Y] = pendulum()
     %set up initial conditions
-    G = [pi/2, pi/2, 0, 0];
-    endTime = 15;
+    G = [pi/4, 0, 0, 0];
+    endTime = 5;
     l = .1;
     
     [t,S] = ode45(@equation, [0,endTime], G);
@@ -24,9 +24,10 @@ function [X, Y] = pendulum()
 
     
     %plot(t, theta, 'r-');
-    xlabel('Time');
-    ylabel('Theta');
-    title('Pendulum Position over time');
+    %comet(theta1,theta2);
+    xlabel('Theta 1');
+    ylabel('Theta 2');
+    title('Pendulum Angle Variation');
     X = t;
     Y = S;
     
