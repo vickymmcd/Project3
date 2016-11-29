@@ -24,9 +24,9 @@ function [X, Y1,Y2] = pendulum(G)
     
     %plot(t, theta, 'r-');
     %comet(theta1,theta2);
-    xlabel('Theta 1');
-    ylabel('Theta 2');
-    title('Pendulum Angle Variation');
+%     xlabel('Theta 1');
+%     ylabel('Theta 2');
+%     title('Pendulum Angle Variation');
     X = t;
     Y1=y1;
     Y2=y2;

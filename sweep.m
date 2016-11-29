@@ -1,9 +1,16 @@
 function sweep()
-hold on
+hold on;
+xlabel('Initial Theta 1 (radians)');
+ylabel('Y1-Y2 (m)');
+title('Do Not Spill the Coffee!');
 for itheta1=pi/10:0.1:pi
     G  = [itheta1,0,0,0];
     [t,y1,y2] = pendulum(G);
-    plot(itheta1,y1-y2,'r*');
+    if min(y1-y2)>0
+        plot(itheta1,min(y1-y2),'g*');
+    else
+        plot(itheta1,min(y1-y2),'r*');
+    end
 end 
 
 
