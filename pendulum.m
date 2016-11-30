@@ -1,6 +1,6 @@
 function [X, Y1,Y2] = pendulum(G)
     %set up initial conditions
-    endTime = 5;
+    endTime = 15;
     l = .1;
     
     [t,S] = ode45(@equation, [0,endTime], G);
