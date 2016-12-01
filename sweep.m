@@ -2,7 +2,7 @@ function sweep()
 hold on;
 xlabel('Initial Theta 1 (radians)');
 ylabel('Y1-Y2 (m)');
-title('Do Not Spill the Coffee!');
+title('The Swing');
 for itheta1=pi/10:0.1:pi
     G  = [itheta1,0,0,0];
     [t,y1,y2] = pendulum(G);
