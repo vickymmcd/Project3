@@ -1,7 +1,5 @@
-function res = equation(~,M)
+function res = equation(~,M, m1, m2)
     %set given variables
-    m1=60; %kg
-    m2=60; %kg
     L1=.1; %m
     L2=.1; %m
     g=9.8; %m/s^2

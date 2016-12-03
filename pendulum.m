@@ -1,9 +1,10 @@
-function [X, Y1,Y2] = pendulum(G)
+function [X, Y1,Y2] = pendulum(G, m1, m2)
     %set up initial conditions
     endTime = 15;
     l = .1;
     
-    [t,S] = ode45(@equation, [0,endTime], G);
+    dUdt = @(ti, Ui) equation(ti, Ui, m1, m2);
+    [t,S] = ode45(dUdt, [0,endTime], G);
     %unpack the solution
     theta1 = S(:,1);   
     theta2 = S(:,2);
